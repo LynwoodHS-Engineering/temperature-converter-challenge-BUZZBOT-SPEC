@@ -39,3 +39,40 @@ main()
 Add a third conversion option for Kelvin, including functions to convert to and from Kelvin.
 
 ## Submission:  Submit your code here and click "mark as done" on Google Classroom.
+def celsius_to_fahrenheit(celsius):
+  fahrenheit = (celsius * 9/5) + 32
+  return fahrenheit
+
+def fahrenheit_to_celsius(fahrenheit):
+  celsius = (fahrenheit - 32) * 5/9
+  return celsius
+
+def kelvin_to_fahrenheit(kelvin):
+  fahrenheit = (kelvin - 273.15) * 1.8 + 32
+  return fahrenheit
+
+def menu():
+  while True:
+    print("1. celsius to fahrenheit")
+    print("2. fahrenheit to celsius")
+    print("3. kelvin to fahrenheit")
+    print("4. quit")
+    choice = input("Pick a number 1, 2, 3, 4.")
+
+    if choice == "1":
+           celsius = eval(input("Enter celsius"))
+           fahrenheit = celsius_to_fahrenheit(celsius)
+           print(f"{celsius}°C = {fahrenheit:f}°F")
+    if choice == "2":
+           fahrenheit = eval(input("Enter Fahrenheit:"))
+           celsius = fahrenheit_to_celsius(fahrenheit)
+           print(f"{fahrenheit}°F = {celsius:f}°C")
+    if choice == "3":
+           kelvin = eval(input("Enter Kelvin"))
+           fahrenheit = kelvin_to_fahrenheit(kelvin)
+           print(f"{kelvin}°K = {fahrenheit: f}°F")
+    if choice == "4":
+      break
+      
+
+menu()
